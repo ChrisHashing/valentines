@@ -3,9 +3,10 @@ import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethe
 window.contractConfig = {};
 
 // Constants
-const CONTRACT_ADDRESS = '0x2F2DAa6af903B01F6F87011242386F686bc61ce1';
+const CONTRACT_ADDRESS = '0xE03BFfC19945912c5b6E69492125030FAD6bf8B4';
 const NETWORK_ID = '137'; 
-const RPC_URL = 'https://polygon-bor-rpc.publicnode.com';
+// const RPC_URL = 'https://polygon-bor-rpc.publicnode.com';
+const RPC_URL = 'https://sepolia.infura.io/v3/2780bb26cb264e22be7810b7c0d6f3f9';
 const MAX_FETCH_SIZE = 12;
 
 const contractABI = [

@@ -71,12 +71,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    
 
 }
 
 .NFTMintingForm_wrappper {
 
     padding: 30px;
+    width: 40%;
 }
 
 

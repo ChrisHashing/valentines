@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { initializeContractDate, updateCountdown } from '../../utils/contractUtil'; // Import the functions
-import styles from './MintStartTimer.module.css'; // Import styles from MintEndTimer
+import styles from './MintEndTimer.module.css'; // Import styles from MintEndTimer
 
 const MintStartTimer = () => {
     const [timeLeft, setTimeLeft] = useState({

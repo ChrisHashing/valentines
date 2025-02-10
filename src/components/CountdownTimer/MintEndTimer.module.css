@@ -7,16 +7,20 @@
 
   gap: 20px;
   margin-top: 50px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timerContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #fff;
   border: 4px solid #000;
   border-radius: 20px;
-  padding: 20px;
+  padding: 20px 40px;
   font-family: "Bowlby One", serif;
   box-shadow: 4px 4px 0px #000;
 
@@ -27,8 +31,7 @@
   font-size: 2rem;
   color: #000;
 
-  font-family: "Bowlby One", serif;
-
+  text-align: center;
 }
 
 .count_town_wrapper {
@@ -42,9 +45,10 @@
 .countdown {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #ff007d;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px 40px;
   color: #fff;
 
   height: 90px;

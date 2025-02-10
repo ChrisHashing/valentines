@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import styles from "./MintEndTimer.module.css";
+import { getCurrentUTCDate,valentineDate } from '../../utils/contractUtil';
 
 function CountdownTimer({ endDate }) {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   function calculateTimeLeft() {
-    const difference = new Date(endDate) - new Date();
+    const now = getCurrentUTCDate();
+    const currentYear = now.getUTCFullYear();
+    let targetDate;
+    targetDate = new Date(Date.UTC(currentYear, valentineDate.month - 1, valentineDate.day + 1)); // Next day at midnight
+    const difference = targetDate - now;
+
     if (difference > 0) {
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -56,7 +62,6 @@ function CountdownTimer({ endDate }) {
         </div>
       </div>
     </div>
-
   );
 }
 

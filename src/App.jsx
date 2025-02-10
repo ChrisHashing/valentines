@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-import CountdownTimer from "./components/CountdownTimer/MintStartTimer";
+import MintTimerContainer from "./components/CountdownTimer/MintTimerContainer";
 import Gallery from "./components/Gallery/Gallery";
 import Instructions from "./components/Instructions/Instructions";
 import NFTMintingForm from "./components/NFTMintingForm/NFTMintingForm";
@@ -15,6 +15,7 @@ import Connect from "./pages/Connect/Connect";
 import Message from "./pages/Message/Message";
 import SiteFooter from "./components/SiteFooter/SiteFooter";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
+import { initializeContractDate } from './utils/contractUtil'; // Import the function
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +26,15 @@ function App() {
       setIsLoading(false);
     }, 1000); // Adjust the delay as needed (2 seconds here)
 
-    return () => clearTimeout(timer); // Cleanup the timer
+    const fetchContractDate = async () => {
+      await initializeContractDate(); // Call the function on first load
+    };
+
+    fetchContractDate();
+
+    return () => {
+      clearTimeout(timer); // Cleanup the timer
+    };
   }, []);
 
   if (isLoading) {
@@ -44,7 +53,7 @@ function App() {
                 <div className={styles.mainSection}>
                   <div className={styles.HeroSection_wrappper}>
                     <HeroSection />
-                    <CountdownTimer />
+                    <MintTimerContainer />
                   </div>
                 </div>
                 <Gallery />
@@ -54,13 +63,11 @@ function App() {
                   </div>
                 </div>
                 <div className={styles.NFTMintingForm}>
-                  <div className={styles.NFTMintingForm_wrappper}>
-
-                      <NFTMintingForm />
-                      {/* Other components */}
-
+                  
+                  <div  id="mint-form-section" className={styles.NFTMintingForm_wrappper}>
+                  <NFTMintingForm />
+                    
                     <Footer />
-
                   </div>
                 </div>
                 <InfiniteScrollCards />
