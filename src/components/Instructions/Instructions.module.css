@@ -1,0 +1,103 @@
+.instructionsContainer {
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 20px;
+  padding: 30px 0px;
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 4px 4px 0px #000;
+
+
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 2.2px;
+  font-family: "Bowlby One", serif;
+}
+
+.instructionsList {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 30px;
+padding: 20px;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  color: rgb(104, 104, 104);
+  font-family: "Bowlby One", serif;
+}
+
+.instructionsList li {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.pricingSection {
+  background-color: #ffccda;
+  padding: 20px;
+  border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
+    margin-bottom: 20px;
+      font-family: "Bowlby One", serif;
+}
+
+.pricingSection p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.pricingSection span {
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .instructionsContainer {
+    padding: 0px;
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .instructionsList li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+
+
+  .pricingSection p {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+ 
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .instructionsList li {
+    font-size: 0.9rem;
+  }
+
+  .pricingSection p {
+    font-size: 0.9rem;
+  }
+}

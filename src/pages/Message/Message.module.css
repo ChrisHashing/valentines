@@ -1,0 +1,116 @@
+
+.wrappper {
+    text-align: center;
+    margin: auto;
+    min-height: 95vh;
+    background-image: url(../../assets/bg_cloud.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 16px;
+    padding: 44px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #000;
+    font-family: "Bowlby One", serif;
+}
+
+.emoji {
+    margin-left: 4px;
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.button {
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+    padding: 10px 80px;
+        border: 3px solid #000;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 2.2px;
+        font-family: "Bowlby One", serif;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        box-shadow: 4px 4px 0px #000;
+        text-decoration: none;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+        max-width: 90%;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .message {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

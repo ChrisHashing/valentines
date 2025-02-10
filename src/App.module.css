@@ -1,0 +1,93 @@
+.appContainer {
+    font-family: Arial, sans-serif;
+    background-color: #fec6dd;
+
+
+
+}
+
+
+.HeroSection_wrappper {
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 95vh;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
+
+}
+
+.mainSection {
+    background-image: url(./assets/bg_cloud.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+
+
+
+.Instructions {
+    background-image: url(./assets/cloud_top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Introduction_wrappper {
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.NFTMintingForm {
+
+    background-image: url(./assets/cloud_bottom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.NFTMintingForm_wrappper {
+
+    padding: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .Introduction_wrappper {
+
+        padding: 10px;
+    }
+
+    .NFTMintingForm_wrappper {
+padding: 0px;
+        padding-bottom: 30px;
+    }
+}

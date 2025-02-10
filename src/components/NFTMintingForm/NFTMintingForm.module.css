@@ -1,0 +1,231 @@
+.formContainer {
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 100%;
+  margin: 20px auto;
+  box-shadow: 4px 4px 0px #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  font-family: "Bowlby One", serif;
+}
+
+.imageContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nftImage {
+  max-width: 150px;
+  height: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.textInput {
+  flex: 1;
+  width: 300px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+
+  font-family: "Bowlby One", serif;
+}
+
+.tokenAmount {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 50px; /* Adjust width as needed */
+  border: none; /* Remove default border */
+  outline: none; /* Remove outline on focus */
+  border-left: 1px solid rgb(255, 255, 255); /* Left border */
+  border-right: 1px solid rgb(255, 255, 255); /* Right border */
+}
+
+/* Hide the default spinner controls */
+.tokenAmount::-webkit-inner-spin-button,
+.tokenAmount::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Hide spinner in Chrome/Safari */
+  margin: 0; /* Remove margin */
+}
+
+.tokenAmount::-moz-inner-spin-button,
+.tokenAmount::-moz-outer-spin-button {
+  -moz-appearance: none; /* Hide spinner in Firefox */
+  margin: 0; /* Remove margin */
+}
+
+.tokenamt {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+
+  font-weight: bold;
+  text-align: center;
+  width: 50px; /* Adjust width as needed */
+  border: none; /* Remove default border */
+  outline: none; /* Remove outline on focus */
+  cursor: pointer;
+}
+
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  font-size: 0.8rem;
+
+  color: rgb(85, 85, 85);
+}
+
+.textArea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: none;
+  min-height: 100px;
+}
+
+.submitButton {
+  background-color: #ff007d;  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px;
+  border: 4px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  font-family: "Bowlby One", serif;
+
+  color: white;
+
+}
+
+.submitButton:hover {
+  background-color:#96044a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 15px 0px;
+    width: 100%;
+
+
+
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textInput {
+    font-size: 1rem;
+    width: unset;
+  }
+
+  .tokenAmount {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .textArea {
+    font-size: 0.9rem;
+    width: 92%;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nftImage {
+    max-width: 120px;
+  }
+
+  .textInput {
+    font-size: 0.9rem;
+  }
+
+  .tokenAmount {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+
+  .submitButton {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+
+/* Button Styles */
+.button {
+  padding: 10px 20px;
+  border: 3px solid #000;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2.2px;
+  font-family: "Bowlby One", serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 4px 4px 0px #000;
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.eternalButton {
+  background-color: #ff007d;
+  color: #fff;
+}
+
+.connectButton {
+  background-color: #ffcc00;
+  color: #000;
+}

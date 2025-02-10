@@ -1,0 +1,83 @@
+.wrapper {
+    text-align: center;
+    margin: auto;
+    min-height: 95vh;
+    background-image: url(../../assets/bg_cloud.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+        padding-top: 130px;
+}
+
+.mainSection {
+
+}
+.card_container{
+    max-width: 1300px;
+    height: 100%;
+    background-color: pink;
+
+    border: 4px solid black;
+    border-radius: 20px;
+    padding:0px 30px 30px;
+
+    margin: auto;
+}
+
+
+
+
+.title {
+    font-size: 29px;
+    font-weight: bold;
+    color: #242424;
+    letter-spacing: 5px;
+    margin-bottom: 16px;
+    text-align: left;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: "Bowlby One", serif;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    /* Responsive column sizing */
+    gap: 40px;
+    /* Adds spacing between cards */
+}
+
+.card {
+    width: 100%;
+    /* Width adjusts to the grid column size */
+    height: 560px;
+
+    background: #fff;
+
+    border: 4px solid black;
+        border-radius: 30px;
+}
+
+/* Media queries for additional fine-tuning */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1rem;
+        padding-left: 20px;
+    }
+    .card_container {
+          
+            padding:0px;
+    
+        }
+    .cardGrid {
+        gap: 2px;
+        padding: 10px;
+        /* Reduce gap on smaller screens */
+    }
+
+    .card {
+        height: 450px;
+        margin-bottom: 10px;
+        /* Adjust height for smaller screens */
+    }
+}

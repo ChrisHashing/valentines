@@ -1,0 +1,11 @@
+.wrappper {
+    text-align: center;
+    margin: auto;
+    min-height: 95vh;
+    background-image: url(../../assets/bg_cloud.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 180px;
+}
+
+.mainSection {}

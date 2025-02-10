@@ -1,0 +1,139 @@
+.timerContainer_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.timerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 20px;
+  padding: 20px;
+  font-family: "Bowlby One", serif;
+  box-shadow: 4px 4px 0px #000;
+
+  height: 70px;
+
+  width: 50%;
+
+  font-size: 2rem;
+  color: #000;
+
+  font-family: "Bowlby One", serif;
+
+}
+
+.count_town_wrapper {
+  width: 50%;
+  border-radius: 15px;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0px #000;
+
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  background-color: #ff007d;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+
+  height: 90px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.timeBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+
+  gap: 3px;
+  flex-direction: column;
+
+
+}
+
+.timeValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Bowlby One", serif;
+}
+
+.timeUnit {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.separator {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 5px;
+}
+
+/* Expired Message */
+.expired {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+  margin: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timerContainer_wrapper {
+    flex-direction: column;
+
+    margin-bottom: 20px;
+  }
+
+  .count_town_wrapper {
+    width: 98%;
+  }
+
+  .timerContainer {
+    padding: 1px;
+    flex-direction: column;
+    text-align: center;
+    width: 94%;
+    justify-content: center;
+    height:90px;
+
+  }
+
+  .countdown {
+    padding: 10px;
+  }
+
+  .timeBox {
+    padding: 0 5px;
+  }
+
+  .timeValue {
+    font-size: 2rem;
+  }
+
+  .timeUnit {
+    font-size: 0.9rem;
+  }
+
+  .separator {
+    font-size: 2rem;
+  }
+}
