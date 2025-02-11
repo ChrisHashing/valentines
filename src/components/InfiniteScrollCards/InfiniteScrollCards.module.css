@@ -1,3 +1,9 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
 .scrollWrapper {
     width: 100%;
     overflow: hidden;
@@ -14,52 +20,58 @@
 .scroller {
     display: flex;
     gap: 20px;
+    padding: 20px;
+    overflow-x: scroll;
     scroll-behavior: smooth;
-    transition: transform 0.1s ease-in-out;
-    animation: scroll linear infinite 7s;
+    -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar Firefox */
+}
+
+.scroller::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome, Safari and Opera */
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 300px;
-    padding: 10px;
-    background-color: #fff;
-    border: 4px solid #000;
-    border-radius: 20px;
+    flex: 0 0 auto;
+    width: 200px;
+    padding: 15px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: white;
     box-shadow: 4px 4px 0px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
-    background-color: #c4c4c4;
-    border: 4px solid #000;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #000;
 }
 
 .text {
-    font-size: 1rem;
     font-weight: bold;
-    color: #000;
+    text-align: center;
 }
 
 .button {
-    padding: 5px 10px;
-    background-color: #c4c4c4;
-    border: 4px solid #000;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #000;
+    padding: 8px 16px;
+    background: #ff007d;
+    color: white;
+    border: 2px solid #000;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: transform 0.2s;
 }
 
 .button:hover {
-    background-color: #ddd;
+    transform: translateY(-2px);
 }
 
 /* Stop Animation on Hover */

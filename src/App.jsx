@@ -8,14 +8,15 @@ import NFTMintingForm from "./components/NFTMintingForm/NFTMintingForm";
 import Footer from "./components/Footer/Footer";
 import HeroSection from "./components/HeroSection/HeroSection";
 import InfiniteScrollCards from "./components/InfiniteScrollCards/InfiniteScrollCards";
-import { WalletProvider } from './context/WalletContext'; // Import the WalletProvider
+import { WalletProvider } from './context/WalletContext';
 import styles from "./App.module.css";
 import EternalCards from "./pages/EternalCards/EternalCards";
 import Connect from "./pages/Connect/Connect";
 import Message from "./pages/Message/Message";
 import SiteFooter from "./components/SiteFooter/SiteFooter";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
-import { initializeContractDate } from './utils/contractUtil'; // Import the function
+import { initializeContractDate } from './utils/contractUtil';
+import { RecipientProvider } from './context/RecipientContext';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,45 +43,49 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className={styles.appContainer}>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <div className={styles.mainSection}>
-                  <div className={styles.HeroSection_wrappper}>
-                    <HeroSection />
-                    <MintTimerContainer />
-                  </div>
-                </div>
-                <Gallery />
-                <div className={styles.Instructions}>
-                  <div className={styles.Introduction_wrappper}>
-                    <Instructions />
-                  </div>
-                </div>
-                <div className={styles.NFTMintingForm}>
-                  
-                  <div  id="mint-form-section" className={styles.NFTMintingForm_wrappper}>
-                  <NFTMintingForm />
-                    
-                    <Footer />
-                  </div>
-                </div>
-                <InfiniteScrollCards />
-              </>
-            }
-          />
-          <Route path="/eternal-cards" element={<EternalCards />} />
-          <Route path="/connect" element={<Connect />} />
-          <Route path="/message" element={<Message />} />
-        </Routes>
-        <SiteFooter />
-      </div>
-    </Router>
+    <WalletProvider>
+      <RecipientProvider>
+        <Router>
+          <div className={styles.appContainer}>
+            <Header />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <div className={styles.mainSection}>
+                      <div className={styles.HeroSection_wrappper}>
+                        <HeroSection />
+                        <MintTimerContainer />
+                      </div>
+                    </div>
+                    <Gallery />
+                    <div className={styles.Instructions}>
+                      <div className={styles.Introduction_wrappper}>
+                        <Instructions />
+                      </div>
+                    </div>
+                    <div className={styles.NFTMintingForm}>
+                      
+                      <div  id="mint-form-section" className={styles.NFTMintingForm_wrappper}>
+                      <NFTMintingForm />
+                        
+                        <Footer />
+                      </div>
+                    </div>
+                    <InfiniteScrollCards />
+                  </>
+                }
+              />
+              <Route path="/eternal-cards" element={<EternalCards />} />
+              <Route path="/connect" element={<Connect />} />
+              <Route path="/message" element={<Message />} />
+            </Routes>
+            <SiteFooter />
+          </div>
+        </Router>
+      </RecipientProvider>
+    </WalletProvider>
   );
 }
 

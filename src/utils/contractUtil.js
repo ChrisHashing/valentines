@@ -69,63 +69,46 @@ async function updateSendButton() {
     }
 }
 
-async function sendValentine(recipients) {
-    // if (!recipients.length) {
-    //     alert('Please add at least one recipient!');
-    //     return;
-    // }
+export const sendValentine = async (recipient, quantity, customMessageEnabled, message) => {
+    // Input validation
+    if (recipient.trim() === '') {
+        throw new Error('Please enter recipient Polygon address!');
+    }
 
+    if (customMessageEnabled && message.trim() === '') {
+        throw new Error('Please enter your message!');
+    }
+
+    if (quantity < 1 || quantity > 100) {
+        throw new Error('Please enter a quantity between 1 and 100!');
+    }
 
     try {
-        const allValentines = recipients.flatMap(recipient => 
-            Array(recipient.quantity).fill().map((_, i) => ({
-                to: recipient.address,
-                message: recipient.messages?.[i] || ''
-            }))
-        );
+        if (quantity === 1) {
+            // Single mint
+            const result = await mintValentine(recipient, message);
+            return {
+                type: 'single',
+                result: result
+            };
+        } else {
+            // Batch mint
+            const valentines = Array(quantity).fill().map(() => ({
+                to: recipient,
+                message: message
+            }));
 
-        const result = await batchMintValentines(allValentines);
-        
-        console.log(result)
-        // Update the success message display
-        // let valentinesHtml = '';
-        // result.mintedTokens.forEach((token, i) => {
-        //     const valentine = allValentines[i];
-        //     valentinesHtml += `
-        //         <div class="valentine-sent">
-        //             <h3>💌 Valentine Sent!</h3>
-        //             <p>To: ${valentine.to}</p>
-        //             ${valentine.message ? `<p>Message: ${valentine.message}</p>` : ''}
-        //             <p>Token ID: ${token.tokenId}</p>
-        //             ${result.isMock ? '<p class="mock-notice">(Test Mode)</p>' : ''}
-        //             <p>With love ❤️</p>
-        //         </div>
-        //     `;
-        // });
-
-        // sentMessage.innerHTML = `
-        //     <div class="batch-transaction">
-        //         <p>Transaction: <a href="https://polygonscan.com/tx/${result.transaction}" 
-        //             target="_blank">${result.transaction.slice(0, 6)}...${result.transaction.slice(-4)}</a></p>
-        //     </div>
-        //     ${valentinesHtml}
-        // `;
-
-        // Clear the form
-        recipients = [];
-        // Call a function to re-render recipients if needed
-        renderRecipients();
-
+            const result = await batchMintValentines(valentines);
+            return {
+                type: 'batch',
+                result: result
+            };
+        }
     } catch (error) {
         console.error('Error sending valentine:', error);
-        sentMessage.innerHTML = `
-            <div class="valentine-error">
-                <h3>❌ Error Sending Valentine</h3>
-                <p>${error.message || 'Transaction failed. Please try again.'}</p>
-            </div>
-        `;
+        throw error;
     }
-}
+};
 
 function isValentinesDay(date) {
     return date.getUTCMonth() === (valentineDate.month - 1) && 
@@ -174,4 +157,4 @@ function getCurrentUTCDate() {
     return new Date();
 }
 
-export {updateCountdown,isValentinesDay,getCurrentUTCDate, connectWallet, updateSendButton, sendValentine, initializeContractDate, valentineDate };
+export {updateCountdown,isValentinesDay,getCurrentUTCDate, connectWallet, updateSendButton, initializeContractDate, valentineDate };

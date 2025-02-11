@@ -23,7 +23,7 @@
 }
 
 .mainSection {
-    background-image: url(./assets/bg_cloud.png);
+    background-image: url(./assets/bg_cloud.webp);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -36,7 +36,7 @@
 
 
 .Instructions {
-    background-image: url(./assets/cloud_top.png);
+    background-image: url(./assets/cloud_top.webp);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -62,7 +62,7 @@
 
 .NFTMintingForm {
 
-    background-image: url(./assets/cloud_bottom.png);
+    background-image: url(./assets/cloud_bottom.webp);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
